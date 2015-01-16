@@ -25,14 +25,6 @@ dependencies {
 }
 
 
-/* *********************** */
-/*    Application setup
-/* *********************** */
-applicationDistribution.from("webapp") {
-    into "webapp"
-}
-
-
 /* ******************* */
 /*   Jetty webserver   */
 /* ******************* */
@@ -40,8 +32,6 @@ jettyRun {
 	contextPath = ''
 	reload = 'manual' // 'manual' reloads the entire webapp when pressing 'enter'
 	scanIntervalSeconds = 100 // only used with reload = 'automatic'
-	
-	webAppSourceDirectory = file('webapp')
 	
 	System.setProperty("ACTIVE_ENV","development")
 	System.setProperty("activeweb.log.request","true")
