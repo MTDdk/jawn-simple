@@ -1,0 +1,60 @@
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'application'
+apply plugin: 'jetty'
+
+// compiler options
+sourceCompatibility = JavaVersion.VERSION_1_8
+targetCompatibility = JavaVersion.VERSION_1_8
+
+
+repositories {
+    mavenCentral()
+}
+
+
+dependencies {
+	
+	compile 'net.javapla.jawn:jawn:0.1.2'
+    
+	//Logging 
+	compile group: 'ch.qos.logback', name: 'logback-classic', version: '1.1.2' exclude group: 'org.slf4j'
+	
+	// it is a known bug, that Gradle includes SLF4J somewhat 
+	// incorrectly in the classpath, but we just have to ignore that
+}
+
+
+/* *********************** */
+/*    Application setup
+/* *********************** */
+applicationDistribution.from("webapp") {
+    into "webapp"
+}
+
+
+/* ******************* */
+/*   Jetty webserver   */
+/* ******************* */
+jettyRun {
+	contextPath = ''
+	reload = 'manual' // 'manual' reloads the entire webapp when pressing 'enter'
+	scanIntervalSeconds = 100 // only used with reload = 'automatic'
+	
+	webAppSourceDirectory = file('webapp')
+	
+	System.setProperty("ACTIVE_ENV","development")
+	System.setProperty("activeweb.log.request","true")
+	System.setProperty("active_reload","true")
+}
+
+/* ****************** */
+/*    Eclipse         */
+/* ****************** */
+eclipse {
+	classpath {
+		// we need the output dir to be the same as gradle uses when running Jetty
+		// or else the dynamic loading does not apply
+		defaultOutputDir = file('build/classes/main')
+	}
+}
