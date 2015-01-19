@@ -8,7 +8,7 @@ public class RouteConfig extends AbstractRouteConfig {
 
     @Override
     public void init(AppContext appContext) {
-        route("/movie/{id}").action("single").to(MovieController.class);
+        route("/movie/id/{id}").action("single").to(MovieController.class);
     }
 
 }

@@ -24,4 +24,12 @@ public class MovieController extends AppController {
         view("movies", Arrays.asList(movie));
         render("list");
     }
+    
+    public void getXml() {
+        respond().xml(movies.listMovies());
+    }
+    
+    public void getJson() {
+        respond().json(movies.listMovies());
+    }
 }
