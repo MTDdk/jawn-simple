@@ -1,11 +1,18 @@
 # Simple example usage of [jawn](https://github.com/MTDdk/jawn)
 
-* This example uses Gradle as build system, so make sure you have [Gradle](http://gradle.org/) correctly installed.
+* This example uses [Gradle](http://gradle.org/) as build system, but this project includes a wrapper for Gradle,
+so it is not necessary to have it installed on your system.
 
-* Run the application:
+* Run the application with Gradle already installed:
 ```
 gradle jettyrun
 ```
+* Run the application with Gradle NOT installed:
+```
+[*nix]    ./gradlew jettyrun
+[Windows] gradlew.bat jettyrun
+```
+
 
 * Browse to:
 ```
