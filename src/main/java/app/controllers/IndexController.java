@@ -17,7 +17,10 @@ public class IndexController extends AppController {
             redirect(new URL(param("url")));
             log().info("Redirecting to {}", param("url"));
         } catch (MalformedURLException e) {
-            log().error("Malformed url",e);
+            // failed to redirect, so we populate the view instead
+            view("redirect", param("url"));
+            view("error", e.getMessage());
+            log().error("Malformed url: {}", e.getMessage());
         }
     }
 }
