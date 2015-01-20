@@ -9,8 +9,8 @@ gradle jettyrun
 ```
 * Run the application with Gradle NOT installed:
 ```
-[*nix]    ./gradlew jettyrun
-[Windows] gradlew.bat jettyrun
+[*NIX]:    ./gradlew jettyrun
+[Windows]: gradlew.bat jettyrun
 ```
 
 
