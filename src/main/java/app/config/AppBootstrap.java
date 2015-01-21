@@ -1,17 +1,14 @@
 package app.config;
 
-import app.db.DbModule;
-
-import com.google.inject.Guice;
-
 import net.javapla.jawn.AppContext;
 import net.javapla.jawn.Bootstrap;
+import app.db.DbModule;
 
 public class AppBootstrap extends Bootstrap {
     
     @Override
     public void init(AppContext context) {
-        setInjector(Guice.createInjector(new DbModule()));
+        putModules(new DbModule());
     }
     
     @Override

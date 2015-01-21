@@ -8,5 +8,4 @@ public class DbModule extends AbstractModule {
     protected void configure() {
         bind(MoviesDB.class).to(ArrayMoviesDB.class);
     }
-
 }

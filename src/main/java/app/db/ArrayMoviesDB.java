@@ -30,6 +30,4 @@ class ArrayMoviesDB implements MoviesDB {
     public Movie fetch(int id) {
         return movies.get(id);
     }
-
-    
 }
