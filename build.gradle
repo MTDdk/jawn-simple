@@ -11,12 +11,16 @@ targetCompatibility = JavaVersion.VERSION_1_8
 repositories {
     mavenCentral()
     
+    //snapshot repository - not actually needed to run this example
+    maven {
+        url 'http://oss.sonatype.org/content/repositories/snapshots'
+    }
 }
 
 
 dependencies {
 	
-	compile 'net.javapla.jawn:jawn:0.1.4'
+	compile 'net.javapla.jawn:jawn:0.1.5'
     
 	//Logging 
 	compile group: 'ch.qos.logback', name: 'logback-classic', version: '1.1.2' exclude group: 'org.slf4j'
@@ -34,9 +38,9 @@ jettyRun {
 	reload = 'manual' // 'manual' reloads the entire webapp when pressing 'enter'
 	scanIntervalSeconds = 100 // only used with reload = 'automatic'
 	
-	System.setProperty("ACTIVE_ENV","development")
-	System.setProperty("activeweb.log.request","true")
-	System.setProperty("active_reload","true")
+	System.setProperty("JAWN_ENV","development")
+	System.setProperty("jawn.log.request","true")
+	System.setProperty("jawn_reload","true")
 }
 
 /* ****************** */
