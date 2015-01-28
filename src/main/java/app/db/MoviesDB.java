@@ -8,4 +8,6 @@ public interface MoviesDB {
 
     public List<Movie> listMovies();
     public Movie fetch(int id);
+    public boolean add(Movie m);
+    public Movie find(String name);
 }

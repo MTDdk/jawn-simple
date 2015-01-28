@@ -19,11 +19,41 @@ public class MovieController extends AppController {
     }
     
     public void getSingle() {
-        Movie movie = movies.fetch(getIdInt());
+        Movie movie = movies.fetch(getId().asInt());
         
         view("movies", Arrays.asList(movie));
         render("list");
     }
+    
+    public void postMovie() {
+        String title = param("title").asString();
+        Integer year = param("year").asInt();
+        
+        movies.add(new Movie(title, year));
+        redirect(); // redirect to index()
+    }
+    
+    /**
+     * Update movies
+     */
+    public void putName() {
+        Movie movie = movies.fetch(param("pk").asInt());
+        movie.name = param("value").asString();
+    }
+    public void putYear() {
+        Movie movie = movies.fetch(param("pk").asInt());
+        movie.year = param("value").asInt();
+    }
+    
+    
+    
+    
+    
+    /* 
+     * **********************************
+     * Get the list in a different format
+     * **********************************
+     */
     
     public void getXml() {
         respond().xml(movies.listMovies());

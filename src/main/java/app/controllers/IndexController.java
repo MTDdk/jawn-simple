@@ -1,9 +1,7 @@
 package app.controllers;
 
-import java.net.MalformedURLException;
-import java.net.URL;
-
 import net.javapla.jawn.AppController;
+import net.javapla.jawn.exceptions.ParsableException;
 
 public class IndexController extends AppController {
 
@@ -14,9 +12,9 @@ public class IndexController extends AppController {
     
     public void getRedirect() {
         try {
-            redirect(new URL(param("url")));
+            redirect(param("url").asURL());
             log().info("Redirecting to {}", param("url"));
-        } catch (MalformedURLException e) {
+        } catch (ParsableException e) {
             // failed to redirect, so we populate the view instead
             view("redirect", param("url"));
             view("error", e.getMessage());
