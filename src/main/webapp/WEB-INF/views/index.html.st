@@ -21,7 +21,7 @@
         <div class="page-header">
             <h1>"jawn" 
                 <small>Harness the drowsiness</small>
-                <a class="btn btn-primary btn-lg pull-right" href="https://github.com/MTDdk/jawn/" target="_blank" role="button">Read docs</a>
+                <a class="btn btn-primary btn-lg pull-right" href="http://javapla.net" target="_blank" role="button">Read docs</a>
             </h1>
         </div>
         
