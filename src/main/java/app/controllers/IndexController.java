@@ -21,4 +21,12 @@ public class IndexController extends AppController {
             log().error("Malformed url: {}", e.getMessage());
         }
     }
+    
+    public void getKage() {
+        respond().text("kagerrrr");
+    }
+    
+    public void getTest() {
+        respond().text("testteeeer");
+    }
 }

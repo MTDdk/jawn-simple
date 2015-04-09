@@ -1,15 +1,18 @@
 package app.config;
 
-import net.javapla.jawn.AbstractRouteConfig;
-import net.javapla.jawn.AppContext;
 import app.controllers.MovieController;
 import app.controllers.SomeController;
+import net.javapla.jawn.Router;
+import net.javapla.jawn.application.IRouteConfig;
 
-public class RouteConfig extends AbstractRouteConfig {
+public class RouteConfig implements IRouteConfig {
+
     @Override
-    public void init(AppContext appContext) {
-        route("/movie/id/{id}").action("single").to(MovieController.class);
-        route("/else").to(SomeController.class);
-        route("/language/{lang}/*long_id").get().action("lang").to(SomeController.class);
+    public void init(Router router) {
+        router.GET().route("/movie/id/{id}").to(MovieController.class, "single");
+        router.GET().route("/else").to(SomeController.class);
+        router.GET().route("/language/{lang}/{long_id: .*?}").to(SomeController.class, "lang");
+        
     }
+
 }

@@ -1,4 +1,6 @@
 <section>
+    <p class="lead">Update the Movie Database by <mark>clicking</mark> on their names</p>
+    
     <table class="table table-striped">
         <thead><tr><th>Name</th><th>Year</th></tr></thead>
         
@@ -9,10 +11,9 @@
             }$
         </tbody>
     </table>
-    <blockquote>Update the Movie Database by clicking on their names</blockquote>
     
-    <h3>Add new movie</h3>
-    <form class="form-inline" action="movie/movie" method="post">
+    <p class="lead">Add new movie</p>
+    <form class="form-inline" action="/movie/movie" method="post">
         <div class="form-group">
             <label class="sr-only" for="title">Title</label>
             <input type="text" class="form-control" id="title" name="title" placeholder="Title">

@@ -27,10 +27,10 @@ public class MovieController extends AppController {
     
     public void postMovie() {
         String title = param("title").asString();
-        Integer year = param("year").asInt();
+        Integer year = param("year").asInt(2000); // default value
         
         movies.add(new Movie(title, year));
-        redirect(); // redirect to index()
+        redirect(); // redirect to index() of this Controller
     }
     
     /**
@@ -44,8 +44,6 @@ public class MovieController extends AppController {
         Movie movie = movies.fetch(param("pk").asInt());
         movie.year = param("value").asInt();
     }
-    
-    
     
     
     
