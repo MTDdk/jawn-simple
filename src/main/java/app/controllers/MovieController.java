@@ -45,7 +45,12 @@ public class MovieController extends AppController {
         movie.year = param("value").asInt();
     }
     
-    
+    public void getKage() {
+        respond().text("henning11333333333333");
+    }
+    public void getHenning() {
+        respond().json(new Movie("Movie name",555,10));
+    }
     
     /* 
      * **********************************
