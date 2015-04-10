@@ -10,6 +10,10 @@ public class SomeController extends AppController {
         respond().text("language is ''{0}'' - param id: {1}", language(), param("long_id"));
     }
     
+    public void getKage() {
+        respond().text("language   " + language());
+    }
+    
     public void postJson() {
         try {
             System.err.println(request().parseBody(Movie.class));
