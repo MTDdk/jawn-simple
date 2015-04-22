@@ -2,7 +2,7 @@ package app.controllers;
 
 import java.util.Arrays;
 
-import net.javapla.jawn.AppController;
+import net.javapla.jawn.core.AppController;
 import app.db.MoviesDB;
 import app.models.Movie;
 

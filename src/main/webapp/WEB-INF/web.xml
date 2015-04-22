@@ -4,7 +4,7 @@
     <display-name>jawn-example</display-name>
     <filter>
         <filter-name>dispatcher</filter-name>
-        <filter-class>net.javapla.jawn.RequestDispatcher</filter-class>
+        <filter-class>net.javapla.jawn.server.RequestDispatcher</filter-class>
         <init-param>
             <param-name>root_controller</param-name>
             <param-value>index</param-value>

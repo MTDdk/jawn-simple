@@ -1,7 +1,7 @@
 package app.controllers;
 
-import net.javapla.jawn.AppController;
-import net.javapla.jawn.exceptions.ParsableException;
+import net.javapla.jawn.core.AppController;
+import net.javapla.jawn.core.exceptions.ParsableException;
 
 public class IndexController extends AppController {
 

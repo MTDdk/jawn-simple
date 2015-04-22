@@ -1,8 +1,8 @@
 package app.controllers;
 
 import app.models.Movie;
-import net.javapla.jawn.AppController;
-import net.javapla.jawn.exceptions.ParsableException;
+import net.javapla.jawn.core.AppController;
+import net.javapla.jawn.core.exceptions.ParsableException;
 
 public class SomeController extends AppController {
     

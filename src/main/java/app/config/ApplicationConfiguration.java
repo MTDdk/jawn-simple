@@ -1,17 +1,19 @@
 package app.config;
 
+import net.javapla.jawn.application.ApplicationBootstrap;
+import net.javapla.jawn.application.ApplicationFilters;
+import net.javapla.jawn.application.ApplicationRoutes;
+import net.javapla.jawn.core.ConfigApp;
+import net.javapla.jawn.core.Filters;
+import net.javapla.jawn.core.Router;
+import net.javapla.jawn.core.filters.LogRequestPropertiesFilter;
+import net.javapla.jawn.core.filters.LogRequestTimingFilter;
+import net.javapla.jawn.core.filters.LogRequestsFilter;
 import app.controllers.MovieController;
 import app.controllers.SomeController;
 import app.db.DbModule;
-import net.javapla.jawn.ConfigApp;
-import net.javapla.jawn.Filters;
-import net.javapla.jawn.Router;
-import net.javapla.jawn.application.FrameworkConfig;
-import net.javapla.jawn.filters.LogRequestPropertiesFilter;
-import net.javapla.jawn.filters.LogRequestTimingFilter;
-import net.javapla.jawn.filters.LogRequestsFilter;
 
-public class ApplicationConfiguration extends FrameworkConfig {
+public class ApplicationConfiguration implements ApplicationBootstrap, ApplicationRoutes, ApplicationFilters {
     
     @Override
     public void bootstrap(ConfigApp config) {

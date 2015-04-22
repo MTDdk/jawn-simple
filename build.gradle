@@ -40,7 +40,6 @@ jettyRun {
 	scanIntervalSeconds = 100 // only used with reload = 'automatic'
 	
 	System.setProperty("JAWN_ENV","development")
-	System.setProperty("jawn.log.request","true")
 	System.setProperty("jawn_reload","true")
 }
 
