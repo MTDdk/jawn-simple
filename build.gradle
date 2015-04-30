@@ -19,9 +19,7 @@ repositories {
 
 dependencies {
 	
-	//compile 'net.javapla.jawn:jawn:0.2.0'
-	compile project(':jawn')
-	
+	compile 'net.javapla.jawn:jawn:0.8.5'
     
 	//Logging 
 	compile group: 'ch.qos.logback', name: 'logback-classic', version: '1.1.2' exclude group: 'org.slf4j'

@@ -5,10 +5,6 @@
     <filter>
         <filter-name>dispatcher</filter-name>
         <filter-class>net.javapla.jawn.server.RequestDispatcher</filter-class>
-        <init-param>
-            <param-name>root_controller</param-name>
-            <param-value>index</param-value>
-        </init-param>
     </filter>
     <filter-mapping>
         <filter-name>dispatcher</filter-name>

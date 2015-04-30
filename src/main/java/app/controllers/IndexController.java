@@ -1,7 +1,10 @@
 package app.controllers;
 
+import java.io.File;
+
 import net.javapla.jawn.core.AppController;
 import net.javapla.jawn.core.exceptions.ParsableException;
+import net.javapla.jawn.core.http.Cookie;
 
 public class IndexController extends AppController {
 
@@ -23,10 +26,20 @@ public class IndexController extends AppController {
     }
     
     public void getKage() {
-        respond().text("kagerrrr");
+        respond().sendFile(new File(getRealPath("images/test.jpg")));
     }
     
     public void getTest() {
-        respond().text("testteeeer");
+        Cookie cookie = cookie("henning");
+        if (cookie == null) {
+            System.err.println("................... cookie not set ......");
+            sendCookie("henning","tester");
+        } else {
+            System.err.println("-------------------- cookie set to " + cookie.getValue());
+        }
+    }
+    public void getFlash() {
+        flash("message","henning har ikke noget tøj på");
+        redirect(IndexController.class);
     }
 }
