@@ -1,9 +1,12 @@
 package app.controllers;
 
-import net.javapla.jawn.AppController;
-import net.javapla.jawn.exceptions.ParsableException;
+import java.io.File;
 
-public class IndexController extends AppController {
+import net.javapla.jawn.core.ApplicationController;
+import net.javapla.jawn.core.exceptions.ParsableException;
+import net.javapla.jawn.core.http.Cookie;
+
+public class IndexController extends ApplicationController {
 
     public void index() {
         view("title", "Try to make the framework redirect");
@@ -20,5 +23,23 @@ public class IndexController extends AppController {
             view("error", e.getMessage());
             log().error("Malformed url: {}", e.getMessage());
         }
+    }
+    
+    public void getKage() {
+        respond().sendFile(new File(getRealPath("images/test.jpg")));
+    }
+    
+    public void getTest() {
+        Cookie cookie = cookie("henning");
+        if (cookie == null) {
+            System.err.println("................... cookie not set ......");
+            sendCookie("henning","tester");
+        } else {
+            System.err.println("-------------------- cookie set to " + cookie.getValue());
+        }
+    }
+    public void getFlash() {
+        flash("message","henning har ikke noget tøj på");
+        redirect(IndexController.class);
     }
 }

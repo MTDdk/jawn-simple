@@ -18,7 +18,7 @@ $(window).load(function() {
 	if (currentPage.startsWith("/movie")) {
 		$('#navigation').children().removeClass('active');
 		$('#navigation_movie').addClass('active');
-	} else if (currentPage.startsWith("/some")) {
+	} else if (currentPage.startsWith("/some") || currentPage.startsWith("/else")) {
 		$('#navigation').children().removeClass('active');
 		$('#navigation_some').addClass('active');
 	}

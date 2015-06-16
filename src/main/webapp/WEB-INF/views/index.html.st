@@ -9,8 +9,6 @@
     <link rel="shortcut icon" href="/favicon.ico">
     <link rel="icon" href="/favicon.ico">
     
-    $site.scripts$
-    
     $site.styles$
 
 </head>
@@ -34,5 +32,6 @@
         $site.content$
     </div>
 
+    $site.scripts$
 </body>
 </html>

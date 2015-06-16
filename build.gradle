@@ -1,6 +1,6 @@
 apply plugin: 'java'
 apply plugin: 'eclipse'
-apply plugin: 'application'
+//apply plugin: 'application'
 apply plugin: 'jetty'
 
 // compiler options
@@ -10,17 +10,11 @@ targetCompatibility = JavaVersion.VERSION_1_8
 
 repositories {
     mavenCentral()
-    
-    //snapshot repository - not actually needed to run this example
-    maven {
-        url 'http://oss.sonatype.org/content/repositories/snapshots'
-    }
 }
 
-
 dependencies {
-	
-	compile 'net.javapla.jawn:jawn:0.2.0'
+	//compile project(':jawn-server')
+	compile 'net.javapla.jawn:jawn-server:0.8.7'
     
 	//Logging 
 	compile group: 'ch.qos.logback', name: 'logback-classic', version: '1.1.2' exclude group: 'org.slf4j'
@@ -39,7 +33,6 @@ jettyRun {
 	scanIntervalSeconds = 100 // only used with reload = 'automatic'
 	
 	System.setProperty("JAWN_ENV","development")
-	System.setProperty("jawn.log.request","true")
 	System.setProperty("jawn_reload","true")
 }
 

@@ -2,13 +2,13 @@ package app.controllers;
 
 import java.util.Arrays;
 
-import net.javapla.jawn.AppController;
+import net.javapla.jawn.core.ApplicationController;
 import app.db.MoviesDB;
 import app.models.Movie;
 
 import com.google.inject.Inject;
 
-public class MovieController extends AppController {
+public class MovieController extends ApplicationController {
     
     @Inject
     MoviesDB movies;
@@ -27,10 +27,10 @@ public class MovieController extends AppController {
     
     public void postMovie() {
         String title = param("title").asString();
-        Integer year = param("year").asInt();
+        Integer year = param("year").asInt(2000); // default value
         
         movies.add(new Movie(title, year));
-        redirect(); // redirect to index()
+        redirect(); // redirect to index() of this Controller
     }
     
     /**
@@ -45,9 +45,12 @@ public class MovieController extends AppController {
         movie.year = param("value").asInt();
     }
     
-    
-    
-    
+    public void getKage() {
+        respond().text("henning11333333333333");
+    }
+    public void getHenning() {
+        respond().json(new Movie("Movie name",555,10));
+    }
     
     /* 
      * **********************************
