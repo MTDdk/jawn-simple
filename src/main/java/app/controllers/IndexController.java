@@ -2,11 +2,11 @@ package app.controllers;
 
 import java.io.File;
 
-import net.javapla.jawn.core.AppController;
+import net.javapla.jawn.core.ApplicationController;
 import net.javapla.jawn.core.exceptions.ParsableException;
 import net.javapla.jawn.core.http.Cookie;
 
-public class IndexController extends AppController {
+public class IndexController extends ApplicationController {
 
     public void index() {
         view("title", "Try to make the framework redirect");

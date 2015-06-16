@@ -1,10 +1,10 @@
 package app.controllers;
 
 import app.models.Movie;
-import net.javapla.jawn.core.AppController;
+import net.javapla.jawn.core.ApplicationController;
 import net.javapla.jawn.core.exceptions.ParsableException;
 
-public class SomeController extends AppController {
+public class SomeController extends ApplicationController {
     
     public void getLang() {
         respond().text("language is ''{0}'' - param id: {1}", language(), param("long_id"));

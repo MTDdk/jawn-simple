@@ -2,10 +2,10 @@ package app.config;
 
 import net.javapla.jawn.core.ApplicationConfig;
 import net.javapla.jawn.core.Filters;
-import net.javapla.jawn.core.Router;
 import net.javapla.jawn.core.spi.ApplicationBootstrap;
 import net.javapla.jawn.core.spi.ApplicationFilters;
 import net.javapla.jawn.core.spi.ApplicationRoutes;
+import net.javapla.jawn.core.spi.Routes;
 import net.javapla.jawn.core.spi.filters.LogRequestPropertiesFilter;
 import net.javapla.jawn.core.spi.filters.LogRequestTimingFilter;
 import net.javapla.jawn.core.spi.filters.LogRequestsFilter;
@@ -21,10 +21,10 @@ public class ApplicationConfiguration implements ApplicationBootstrap, Applicati
     }
     
     @Override
-    public void router(Router router) {
-        router.GET().route("/movie/id/{id}").to(MovieController.class, "single");
-        router.GET().route("/else").to(SomeController.class);
-        router.GET().route("/language/{lang}/{long_id: .*?}").to(SomeController.class, "lang");
+    public void router(Routes routes) {
+        routes.GET().route("/movie/id/{id}").to(MovieController.class, "single");
+        routes.GET().route("/else").to(SomeController.class);
+        routes.GET().route("/language/{lang}/{long_id: .*?}").to(SomeController.class, "lang");
     }
     
     @Override
