@@ -1,19 +1,18 @@
 package app.config;
 
-import net.javapla.jawn.core.ApplicationConfig;
-import net.javapla.jawn.core.Filters;
-import net.javapla.jawn.core.spi.ApplicationBootstrap;
-import net.javapla.jawn.core.spi.ApplicationFilters;
-import net.javapla.jawn.core.spi.ApplicationRoutes;
-import net.javapla.jawn.core.spi.Routes;
-import net.javapla.jawn.core.spi.filters.LogRequestPropertiesFilter;
-import net.javapla.jawn.core.spi.filters.LogRequestTimingFilter;
-import net.javapla.jawn.core.spi.filters.LogRequestsFilter;
 import app.controllers.MovieController;
 import app.controllers.SomeController;
 import app.db.DbModule;
+import net.javapla.jawn.core.ApplicationConfig;
+import net.javapla.jawn.core.api.ApplicationBootstrap;
+import net.javapla.jawn.core.api.ApplicationRoutes;
+import net.javapla.jawn.core.api.Filters;
+import net.javapla.jawn.core.api.Router;
+import net.javapla.jawn.core.filters.LogRequestPropertiesFilter;
+import net.javapla.jawn.core.filters.LogRequestTimingFilter;
+import net.javapla.jawn.core.filters.LogRequestsFilter;
 
-public class ApplicationConfiguration implements ApplicationBootstrap, ApplicationRoutes, ApplicationFilters {
+public class ApplicationConfiguration implements ApplicationBootstrap, ApplicationRoutes, net.javapla.jawn.core.api.ApplicationFilters {
     
     @Override
     public void bootstrap(ApplicationConfig config) {
@@ -21,7 +20,7 @@ public class ApplicationConfiguration implements ApplicationBootstrap, Applicati
     }
     
     @Override
-    public void router(Routes routes) {
+    public void router(Router routes) {
         routes.GET().route("/movie/id/{id}").to(MovieController.class, "single");
         routes.GET().route("/else").to(SomeController.class);
         routes.GET().route("/language/{lang}/{long_id: .*?}").to(SomeController.class, "lang");

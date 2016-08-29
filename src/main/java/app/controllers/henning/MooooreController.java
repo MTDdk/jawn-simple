@@ -1,8 +1,8 @@
 package app.controllers.henning;
 
-import net.javapla.jawn.core.ApplicationController;
+import net.javapla.jawn.core.Controller;
 
-public class MooooreController extends ApplicationController {
+public class MooooreController extends Controller {
 
     public void index() {
         view("title", "KRAAAN");

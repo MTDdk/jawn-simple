@@ -2,13 +2,13 @@ package app.controllers;
 
 import java.util.Arrays;
 
-import net.javapla.jawn.core.ApplicationController;
-import app.db.MoviesDB;
-import app.models.Movie;
-
 import com.google.inject.Inject;
 
-public class MovieController extends ApplicationController {
+import app.db.MoviesDB;
+import app.models.Movie;
+import net.javapla.jawn.core.Controller;
+
+public class MovieController extends Controller {
     
     @Inject
     MoviesDB movies;
