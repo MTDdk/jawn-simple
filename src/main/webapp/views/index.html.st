@@ -27,7 +27,6 @@
             <li role="presentation" id="navigation_index" class="active"><a href="/">Index</a></li>
             <li role="presentation" id="navigation_movie"><a href="/movie">Movie</a></li>
             <li role="presentation" id="navigation_some"><a href="/some">Some</a></li>
-            <li role="presentation" id="navigation_upload"><a href="/upload">Upload</a></li>
         </ul>
 
         $site.content$

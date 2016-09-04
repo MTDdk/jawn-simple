@@ -15,13 +15,8 @@ $(window).load(function() {
 	
 	// set active tab correctly
 	var currentPage = window.location.pathname;
-	if (currentPage.startsWith("/movie")) {
-		$('#navigation').children().removeClass('active');
-		$('#navigation_movie').addClass('active');
-	} else if (currentPage.startsWith("/some") || currentPage.startsWith("/else")) {
-		$('#navigation').children().removeClass('active');
-		$('#navigation_some').addClass('active');
-	}
+	$('#navigation').children().removeClass('active');
+	$('#navigation_'+ currentPage.substring(1)).addClass('active');
 });
 
 function redirect(url) {
