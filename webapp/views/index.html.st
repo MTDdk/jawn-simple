@@ -29,6 +29,7 @@
             <li role="presentation" id="navigation_movie"><a href="/movie">Movie</a></li>
             <li role="presentation" id="navigation_url"><a href="/url">Url</a></li>
             <li role="presentation" id="navigation_upload"><a href="/upload">Upload</a></li>
+            <li role="presentation" id="navigation_cookie"><a href="/cookie">Cookie</a></li>
         </ul>
 
         $site.content$

@@ -12,15 +12,7 @@ public class IndexController extends Controller {
         respond().sendFile(new File(getRealPath("images/pi.jpg")));
     }
     
-    public void getTest() {
-        Cookie cookie = cookie("henning");
-        if (cookie == null) {
-            System.err.println("................... cookie not set ......");
-            sendCookie("henning","tester");
-        } else {
-            System.err.println("-------------------- cookie set to " + cookie.getValue());
-        }
-    }
+    
     public void getFlash() {
         flash("message","henning har ikke noget tøj på");
         redirect(IndexController.class);
