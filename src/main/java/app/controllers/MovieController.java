@@ -39,17 +39,12 @@ public class MovieController extends Controller {
     public void putName() {
         Movie movie = movies.fetch(param("pk").asInt());
         movie.name = param("value").asString();
+        respond().status().ok();
     }
     public void putYear() {
         Movie movie = movies.fetch(param("pk").asInt());
         movie.year = param("value").asInt();
-    }
-    
-    public void getKage() {
-        respond().text("henning11333333333333");
-    }
-    public void getHenning() {
-        respond().json(new Movie("Movie name",555,10));
+        respond().status().ok();
     }
     
     /* 

@@ -1,7 +1,7 @@
 package app.config;
 
 import app.controllers.MovieController;
-import app.controllers.SomeController;
+import app.controllers.UrlController;
 import app.db.DbModule;
 import net.javapla.jawn.core.ApplicationConfig;
 import net.javapla.jawn.core.api.ApplicationBootstrap;
@@ -22,8 +22,8 @@ public class ApplicationConfiguration implements ApplicationBootstrap, Applicati
     @Override
     public void router(Router routes) {
         routes.GET().route("/movie/id/{id}").to(MovieController.class, "single");
-        routes.GET().route("/else").to(SomeController.class);
-        routes.GET().route("/language/{lang}/{long_id: .*?}").to(SomeController.class, "lang");
+        routes.GET().route("/else").to(UrlController.class);
+        routes.GET().route("/language/{lang}/{long_id: .*?}").to(UrlController.class, "lang");
     }
     
     @Override
@@ -33,7 +33,7 @@ public class ApplicationConfiguration implements ApplicationBootstrap, Applicati
         filters.add(new LogRequestTimingFilter());
         
         // Action specific
-        filters.add(new LogRequestPropertiesFilter()).to(SomeController.class).forActions("getLang");
+        filters.add(new LogRequestPropertiesFilter()).to(UrlController.class).forActions("getLang");
 //        filters.add(new SystemoutFilter()).to(IndexController.class).forActions("getTest");
     }
     

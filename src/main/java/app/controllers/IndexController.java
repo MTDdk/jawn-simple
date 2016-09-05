@@ -3,30 +3,13 @@ package app.controllers;
 import java.io.File;
 
 import net.javapla.jawn.core.Controller;
-import net.javapla.jawn.core.exceptions.ParsableException;
 import net.javapla.jawn.core.http.Cookie;
 
 public class IndexController extends Controller {
 
-    public void index() {
-        view("title", "Try to make the framework redirect");
-        view("message", "The inputted value will be sent to the framework for evaluation and it will try to redirect if possible");
-    }
     
-    public void getRedirect() {
-        try {
-            redirect(param("url").asURL());
-            log().info("Redirecting to {}", param("url"));
-        } catch (ParsableException e) {
-            // failed to redirect, so we populate the view instead
-            view("redirect", param("url"));
-            view("error", e.getMessage());
-            log().error("Malformed url: {}", e.getMessage());
-        }
-    }
-    
-    public void getKage() {
-        respond().sendFile(new File(getRealPath("images/test.jpg")));
+    public void getImage() {
+        respond().sendFile(new File(getRealPath("images/pi.jpg")));
     }
     
     public void getTest() {
