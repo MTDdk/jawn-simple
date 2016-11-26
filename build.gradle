@@ -13,8 +13,8 @@ repositories {
 }
 
 dependencies {
-	compile project(':jawn-server-undertow')
-	//compile 'net.javapla.jawn:jawn-server:0.8.7'
+	//compile project(':jawn-server-undertow')
+	compile 'net.javapla.jawn:jawn-server-undertow:0.9.2'
     
 	//Logging 
 	compile group: 'ch.qos.logback', name: 'logback-classic', version: '1.1.2' exclude group: 'org.slf4j'
