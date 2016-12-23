@@ -5,8 +5,8 @@ import app.controllers.UrlController;
 import app.db.DbModule;
 import app.models.Movie;
 import net.javapla.jawn.core.Jawn;
-import net.javapla.jawn.core.Response;
-import net.javapla.jawn.core.Responses;
+import net.javapla.jawn.core.Result;
+import net.javapla.jawn.core.Results;
 import net.javapla.jawn.core.filters.LogRequestPropertiesFilter;
 import net.javapla.jawn.core.filters.LogRequestTimingFilter;
 import net.javapla.jawn.core.filters.LogRequestsFilter;
@@ -18,28 +18,30 @@ public class SimpleMain extends Jawn {
     {
         env(Modes.DEV);
         onStartup(() -> System.out.println("My app has started up!"));
+        onShutdown(() -> System.out.println("Closing down"));
         
-        // Routes
+        // Custom Routes
         get("/else", UrlController.class);
         get("/language/{lang}/{long_id: .*?}", UrlController.class, "lang");
         get("/movie/id/{id}", MovieController.class, "single");
         get("/test/{type}", (context) -> {
-            Response rsp;
+            Result rsp;
             switch(context.param("type")) {
                 case "json":
-                    rsp = Responses.json();
+                    rsp = Results.json();
                     break;
                 case "xml":
-                    rsp = Responses.xml();
+                    rsp = Results.xml();
                     break;
                 default:
-                    rsp = Responses.text();
+                    rsp = Results.text();
             }
             
             return rsp.renderable(new Movie("henning",1007));
         });
         
         // Filters (Global)
+        // Called in the same order as they are declared
         filter(new LogRequestsFilter());
         filter(new LogRequestTimingFilter());
         // Filters (Action specific)
