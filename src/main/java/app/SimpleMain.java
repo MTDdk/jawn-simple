@@ -52,6 +52,6 @@ public class SimpleMain extends Jawn {
     }
 
     public static void main(String[] args) throws Exception {
-        run(SimpleMain::new);
+        run(SimpleMain::new, args);
     }
 }
