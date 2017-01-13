@@ -3,7 +3,6 @@ package app.controllers;
 import java.io.File;
 
 import net.javapla.jawn.core.Controller;
-import net.javapla.jawn.core.http.Cookie;
 
 public class IndexController extends Controller {
 
