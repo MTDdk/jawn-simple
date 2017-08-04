@@ -7,7 +7,7 @@ import net.javapla.jawn.core.exceptions.ParsableException;
 public class UrlController extends Controller {
     
     public void getLang() {
-        respond().text("language is ''{0}'' - param id: {1}", param("language"), param("long_id"));
+        respond().text("language is ''{0}'' - param id: {1}", param("lang"), param("long_id"));
     }
     
     public void postJson() {

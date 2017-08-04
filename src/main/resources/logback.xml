@@ -7,7 +7,7 @@
     </appender>
 
     <!-- The server package is a bit noisy -->
-    <logger name="org.xnio.nio" level="WARN" additivity="false">
+    <logger name="org.xnio" level="WARN" additivity="false">
         <appender-ref ref="STDOUT" />
     </logger>
     <root level="DEBUG">

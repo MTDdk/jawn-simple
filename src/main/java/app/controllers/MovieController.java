@@ -60,4 +60,5 @@ public class MovieController extends Controller {
     public void getJson() {
         respond().json(movies.listMovies());
     }
+    
 }
