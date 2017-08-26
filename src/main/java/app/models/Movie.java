@@ -22,6 +22,6 @@ public class Movie {
     
     @Override
     public String toString() {
-        return MessageFormat.format("Movie id: {0}, name: {1}, year: {2}", id, name, year);
+        return MessageFormat.format("Movie id: {0}, name: {1}, year: {2,number,#}", id, name, year);
     }
 }

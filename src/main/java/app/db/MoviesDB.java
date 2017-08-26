@@ -10,4 +10,5 @@ public interface MoviesDB {
     public Movie fetch(int id);
     public boolean add(Movie m);
     public Movie find(String name);
+    int size();
 }

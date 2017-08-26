@@ -46,4 +46,9 @@ class ArrayMoviesDB implements MoviesDB {
         }
         return null;
     }
+    
+    @Override
+    public int size() {
+        return movies.size();
+    }
 }

@@ -3,7 +3,7 @@ package app.controllers;
 import java.util.Base64;
 
 import net.javapla.jawn.core.Controller;
-import net.javapla.jawn.core.uploads.FormItem;
+import net.javapla.jawn.core.http.FormItem;
 
 public class UploadController extends Controller {
     
