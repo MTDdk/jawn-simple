@@ -7,12 +7,12 @@ so it is not necessary to have it installed on your system.
 
 * Run the application with Gradle already installed:
 ```
-gradle jettyrun
+gradle run
 ```
 * Run the application with Gradle NOT installed:
 ```
-[*NIX]:    ./gradlew jettyrun
-[Windows]: gradlew.bat jettyrun
+[*NIX]:    ./gradlew run
+[Windows]: gradlew.bat run
 ```
 
 
