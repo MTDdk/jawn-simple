@@ -28,6 +28,7 @@ public class SimpleMain extends Jawn {
         get("/else", UrlController.class);
         get("/language/{lang}/{long_id: .*?}", UrlController.class, "lang");
         get("/movie/id/{id}", MovieController.class, "single");
+        get("/misc", (context) -> Results.html().template("/misc"));
         get("/test/{type}", (context) -> { // inline response function
             Result rsp;
             switch(context.param("type")) {
