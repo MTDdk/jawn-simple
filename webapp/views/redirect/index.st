@@ -1,6 +1,6 @@
 <section>
     <div class="jumbotron">
-        <h1>$title$</h1>
+        <h2>$title$</h2>
         <p>$message$</p>
 
         <div class="row">

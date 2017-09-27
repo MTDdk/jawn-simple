@@ -1,7 +1,7 @@
 <section>
     <form action="/upload" method="post" enctype="multipart/form-data">
         <div class="form-group">
-            <label for="inputImage">Upload a picture</label>
+            <label for="inputImage">Upload a picture <small>(nothing is saved on the server)</small></label>
             <input type="file" class="form-control" id="inputImage" name="image" accept="image/*">
         </div>
         <button type="submit" class="btn btn-default">Upload</button>
