@@ -1,6 +1,7 @@
 .gradle
 .classpath
 .project
+.settings
 build/
 .README.md
 .README.md.html
