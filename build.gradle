@@ -26,6 +26,7 @@ dependencies {
 /*   Application       */
 /* ******************* */
 mainClassName = 'app.SimpleMain'
+applicationDistribution.from('webapp') { into 'webapp' }
 
 
 /* ****************** */
