@@ -13,11 +13,19 @@ public class Movie {
     public Movie(String name, int year) {
         this.name = name;
         this.year = year;
+        this.id = -1;
     }
     public Movie(String name, int year, int id) {
         this.name = name;
         this.year = year;
         this.id = id;
+    }
+    
+    public Movie clone() {
+        return clone(this.id);
+    }
+    public Movie clone(int id) {
+        return new Movie(this.name, this.year, id);
     }
     
     @Override

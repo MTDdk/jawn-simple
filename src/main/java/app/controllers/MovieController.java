@@ -20,7 +20,6 @@ public class MovieController extends Controller {
     
     public void getSingle() {
         Movie movie = movies.fetch(getId().asInt());
-        
         view("movies", Arrays.asList(movie));
         render("list");
     }

@@ -34,8 +34,12 @@ class ArrayMoviesDB implements MoviesDB {
     @Override
     public boolean add(Movie m) {
         int largestId = movies.get(movies.size()-1).id;
-        m.id = largestId+1;
-        return movies.add(m);
+        return movies.add(m.clone(largestId+1));
+    }
+    
+    @Override
+    public void insert(Movie m) {
+        movies.set(m.id, m);
     }
     
     @Override
