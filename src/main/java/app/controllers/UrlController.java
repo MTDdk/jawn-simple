@@ -12,7 +12,7 @@ public class UrlController extends Controller {
     
     public void postJson() {
         try {
-            System.err.println(request().parseBody(Movie.class));
+            System.err.println(parseBody(Movie.class));
             respond().text("working");
         } catch (ParsableException e) {
             respond().text("didn't work");

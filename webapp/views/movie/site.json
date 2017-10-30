@@ -2,11 +2,11 @@
 	"title": "Movie overview",
 	
 	"scripts" : [
-		{url:"//cdnjs.cloudflare.com/ajax/libs/x-editable/1.5.0/bootstrap3-editable/js/bootstrap-editable.min.js"},
-		{url:"moviescript.js"}
+		{url: "//cdnjs.cloudflare.com/ajax/libs/x-editable/1.5.0/bootstrap3-editable/js/bootstrap-editable.min.js"},
+		{url: "moviescript.js"}
 	],
 	
 	"styles" : [
-		"//cdnjs.cloudflare.com/ajax/libs/x-editable/1.5.0/bootstrap3-editable/css/bootstrap-editable.css"
+		{url: "//cdnjs.cloudflare.com/ajax/libs/x-editable/1.5.0/bootstrap3-editable/css/bootstrap-editable.css"}
 	]
 }

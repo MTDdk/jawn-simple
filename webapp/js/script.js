@@ -1,6 +1,6 @@
 if (typeof jQuery === 'undefined') { throw new Error('jQuery is required'); }
 
-$(window).load(function() {
+$(window).ready(function() {
 	// set active tab correctly
 	var currentPage = window.location.pathname;
 	if (currentPage == '/') currentPage += 'index';
