@@ -19,6 +19,7 @@ public class RedirectController extends Controller {
             view("redirect", param("url"));
             view("error", e.getMessage());
             log().error("Malformed url: {}", e.getMessage());
+            render("redirect");
         }
     }
     

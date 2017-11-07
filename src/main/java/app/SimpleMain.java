@@ -26,9 +26,9 @@ public class SimpleMain extends Jawn {
         
         // Custom Routes
         get("/else", UrlController.class);
-        get("/language/{lang}/{long_id: .*?}", UrlController.class, "lang");
-        get("/movie/id/{id}", MovieController.class, "single");
-        get("/misc", (context) -> Results.html().template("/misc"));
+        get("/language/{lang}/{long_id: .*?}", UrlController.class, UrlController::getLang);
+        get("/movie/id/{id}", MovieController.class, MovieController::getSingle);
+        get("/misc", Results.html().template("/misc"));
         get("/test/{type}", (context) -> { // inline response function
             Result rsp;
             switch(context.param("type")) {
@@ -45,14 +45,14 @@ public class SimpleMain extends Jawn {
             return rsp.renderable(new Movie("The Avengers",2012));
         });
         get("/random", this::random); // method signature response function
-        get("/shutdown", (context) -> { stop(); return Results.ok(); });
+        get("/shutdown", () -> { stop(); return Results.ok(); });
         
         // Filters (Global)
         // Called in the same order as they are declared
         filter(new LogRequestsFilter());
         filter(new LogRequestTimingFilter());
-        // Filters (Action specific)
-        filter(new LogRequestPropertiesFilter(), UrlController.class, "getLang");
+        // Filters (Controller specific)
+        filter(new LogRequestPropertiesFilter(), UrlController.class);
         
         // Modules
         use(new DbModule());
