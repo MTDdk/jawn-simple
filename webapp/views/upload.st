@@ -8,9 +8,9 @@
       </div>
       <div class="panel-body">
         <div class="form-group">
-          <input type="file" class="form-control" id="inputImage" name="image" accept="image/*" onchange="javascript:this.form.submit();">
+          <input type="file" class="form-control" id="inputImage" name="image" accept="image/*" onchange="javascript:\$('#uploadbutton').prop('disabled',true);this.form.submit();">
         </div>
-        <button type="submit" class="btn btn-default">Upload</button>
+        <button id="uploadbutton" type="submit" class="btn btn-default">Upload</button>
       </div>
     </div>
   </form>
