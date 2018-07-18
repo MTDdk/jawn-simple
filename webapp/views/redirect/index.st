@@ -1,7 +1,7 @@
 <section>
   <div class="jumbotron">
     <h3>$title$</h3>
-    <p>$message$</p>
+    <h5>$message$</h5>
 
     <div class="row">
       <div class="col-lg-7">
