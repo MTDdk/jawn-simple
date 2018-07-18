@@ -12,8 +12,8 @@ repositories {
 }
 
 dependencies {
-	//compile project(':jawn-server-undertow'), project('jawn-templates-stringtemplate')
-	compile 'net.javapla.jawn:jawn:0.9.10'
+    //compile project(':jawn-server-undertow'), project('jawn-templates-stringtemplate')
+  	compile 'net.javapla.jawn:jawn:0.9.10'
     
     //Logging 
     compile group: 'ch.qos.logback', name: 'logback-classic', version: '1.1.2' exclude group: 'org.slf4j'
@@ -24,15 +24,3 @@ dependencies {
 /* ******************* */
 mainClassName = 'app.SimpleMain'
 applicationDistribution.from('webapp') { into 'webapp' }
-
-
-/* ****************** */
-/*    Eclipse         */
-/* ****************** */
-eclipse {
-    classpath {
-        // we need the output dir to be the same as the one gradle uses when running Jetty
-        // or else the dynamic loading does not apply
-        defaultOutputDir = file('build/classes/main')
-    }
-}
