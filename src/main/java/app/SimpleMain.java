@@ -65,6 +65,6 @@ public class SimpleMain extends Jawn {
     private Result random(Context ctx) {
         Random rnd = new Random();
         MoviesDB db = require(MoviesDB.class);
-        return Results.text().renderable(db.fetch(rnd.nextInt(db.size())));
+        return Results.json().renderable(db.fetch(rnd.nextInt(db.size())));
     }
 }
