@@ -1,19 +1,15 @@
 package app.controllers;
 
-import java.util.Arrays;
-
 import com.google.inject.Inject;
 
 import app.db.MoviesDB;
-import app.models.Movie;
-import net.javapla.jawn.core.Controller;
 
-public class MovieController extends Controller {
+public class MovieController /*extends Controller*/ {
     
     @Inject
     MoviesDB movies;
 
-    public void index() {
+/*    public void index() {
         view("movies", movies.listMovies());
         render("list");
     }
@@ -30,12 +26,12 @@ public class MovieController extends Controller {
         
         movies.add(new Movie(title, year));
         redirect(); // redirect to index() of this Controller
-    }
+    }*/
     
     /**
      * Update movies
      */
-    public void putName() {
+/*    public void putName() {
         Movie movie = movies.fetch(param("pk").asInt());
         movie.name = param("value").asString();
         respond().status().ok();
@@ -45,19 +41,19 @@ public class MovieController extends Controller {
         movie.year = param("value").asInt();
         respond().status().ok();
     }
-    
+    */
     /* 
      * **********************************
      * Get the list in a different format
      * **********************************
      */
-    
+/*    
     public void getXml() {
         respond().xml(movies.listMovies());
     }
     
     public void getJson() {
         respond().json(movies.listMovies());
-    }
+    }*/
     
 }

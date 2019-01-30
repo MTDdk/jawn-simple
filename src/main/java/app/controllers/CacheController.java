@@ -1,16 +1,7 @@
 package app.controllers;
 
-import java.util.Random;
-
-import com.google.inject.Inject;
-
-import app.db.MoviesDB;
-import app.models.Movie;
-import net.javapla.jawn.core.Controller;
-import net.javapla.jawn.core.cache.Cache;
-
-public class CacheController extends Controller {
-    @Inject
+public class CacheController /*extends Controller*/ {
+    /*@Inject
     Cache cache;
     
     @Inject
@@ -36,5 +27,5 @@ public class CacheController extends Controller {
         view("movie",movie);
         view("number_of_seconds",numberOfSeconds);
     }
-    
+*/    
 }

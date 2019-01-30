@@ -1,11 +1,7 @@
 package app.controllers;
 
-import app.models.Movie;
-import net.javapla.jawn.core.Controller;
-import net.javapla.jawn.core.exceptions.ParsableException;
-
-public class UrlController extends Controller {
-    
+public class UrlController /*extends Controller*/ {
+ /*   
     public void getLang() {
         respond().text("language is ''{0}'' - param id: {1}", param("lang"), param("long_id"));
     }
@@ -17,5 +13,5 @@ public class UrlController extends Controller {
         } catch (ParsableException e) {
             respond().text("didn't work");
         }
-    }
+    }*/
 }
