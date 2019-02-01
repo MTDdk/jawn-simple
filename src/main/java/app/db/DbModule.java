@@ -1,11 +1,12 @@
 package app.db;
 
-import com.google.inject.AbstractModule;
+import net.javapla.jawn.core.spi.ApplicationConfig;
+import net.javapla.jawn.core.spi.ModuleBootstrap;
 
-public class DbModule extends AbstractModule {
-
+public class DbModule implements ModuleBootstrap {
+    
     @Override
-    protected void configure() {
-        bind(MoviesDB.class).to(ArrayMoviesDB.class);
+    public void bootstrap(ApplicationConfig config) {
+        config.binder().bind(MoviesDB.class).to(ArrayMoviesDB.class);
     }
 }

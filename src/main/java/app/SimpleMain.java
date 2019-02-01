@@ -2,12 +2,16 @@ package app;
 
 import java.util.Random;
 
+import app.controllers.IndexController;
+import app.controllers.UrlController;
+import app.db.DbModule;
 import app.db.MoviesDB;
 import app.models.Movie;
 import net.javapla.jawn.core.Context;
 import net.javapla.jawn.core.Jawn;
 import net.javapla.jawn.core.Result;
 import net.javapla.jawn.core.Results;
+import net.javapla.jawn.core.Status;
 import net.javapla.jawn.core.filters.LogRequestTimingFilter;
 import net.javapla.jawn.core.util.Modes;
 
@@ -22,8 +26,12 @@ public class SimpleMain extends Jawn {
         onStartup(() -> System.out.println("My app has started up!"));
         onShutdown(() -> System.out.println("Closing down"));
         
+        
         // Custom Routes
 //        get("/else", UrlController.class);
+        mvc(UrlController.class);
+        mvc(IndexController.class);
+//        get("/language/{lang}/{long_id: .*?}", context -> Results.text("language is ''{0}'' - param id: {1}", context.param("lang").orElse(null), context.param("long_id").orElse(null)));
 //        get("/language/{lang}/{long_id: .*?}", UrlController.class, UrlController::getLang);
 //        get("/movie/id/{id}", MovieController.class, MovieController::getSingle);
         get("/misc", Results.html().template("/misc"));
@@ -57,7 +65,7 @@ public class SimpleMain extends Jawn {
 //        filter(new LogRequestPropertiesFilter(), UrlController.class);
         
         // Modules
-//        use(new DbModule());
+        use(new DbModule());
     }
 
     public static void main(String[] args) throws Exception {
