@@ -5,7 +5,7 @@ import net.javapla.jawn.core.Controller;
 public class CookieController extends Controller {
 
     public void index() {
-        view("cookies", cookies());
+        view("cookies", cookies().values());
     }
     
     public void postCookie() {
@@ -15,7 +15,7 @@ public class CookieController extends Controller {
     
     public void deleteCookies() {
         log().info("Deleting all cookies");
-        cookies().forEach(cookie -> sendExpireCookie(cookie.getName()));
+        cookies().values().forEach(cookie -> sendExpireCookie(cookie.getName()));
         redirect(CookieController.class);
     }
 }

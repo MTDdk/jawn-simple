@@ -7,4 +7,9 @@
  <code>webapp/views/</code>
     and update the corresponding page
   </p>
+  
+  
+  $if(flash)$
+  <p>$flash.message$</p>
+  $endif$
 </section>

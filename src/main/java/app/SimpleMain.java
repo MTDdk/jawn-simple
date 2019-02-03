@@ -21,6 +21,7 @@ public class SimpleMain extends Jawn {
     // implicit constructor
     {
         env(Modes.DEV);
+        server().contextPath("/test");
         onStartup(() -> System.out.println("My app has started up!"));
         onShutdown(() -> System.out.println("Closing down"));
         

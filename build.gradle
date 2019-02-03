@@ -9,14 +9,17 @@ targetCompatibility = JavaVersion.VERSION_1_8
 
 repositories {
     mavenCentral()
+    maven {
+        url 'https://oss.sonatype.org/content/repositories/snapshots'
+    }
 }
 
 dependencies {
     //compile project(':jawn-server-undertow'), project('jawn-templates-stringtemplate')
-  	compile 'net.javapla.jawn:jawn:0.9.10'
+  	compile 'net.javapla.jawn:jawn:0.9.14-SNAPSHOT'
     
     //Logging 
-    compile group: 'ch.qos.logback', name: 'logback-classic', version: '1.1.2' exclude group: 'org.slf4j'
+    //compile group: 'ch.qos.logback', name: 'logback-classic', version: '1.1.2' exclude group: 'org.slf4j'
 }
 
 /* ******************* */
