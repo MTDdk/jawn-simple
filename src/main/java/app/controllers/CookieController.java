@@ -15,7 +15,7 @@ public class CookieController extends Controller {
     
     public void deleteCookies() {
         log().info("Deleting all cookies");
-        cookies().values().forEach(cookie -> sendExpireCookie(cookie.getName()));
+        cookies().keySet().forEach(this::sendExpireCookie);
         redirect(CookieController.class);
     }
 }
