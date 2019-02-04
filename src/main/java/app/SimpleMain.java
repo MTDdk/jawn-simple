@@ -13,6 +13,7 @@ import net.javapla.jawn.core.Context;
 import net.javapla.jawn.core.Jawn;
 import net.javapla.jawn.core.Result;
 import net.javapla.jawn.core.Results;
+import net.javapla.jawn.core.filters.LogRequestPropertiesFilter;
 import net.javapla.jawn.core.filters.LogRequestTimingFilter;
 import net.javapla.jawn.core.util.Modes;
 
@@ -32,7 +33,9 @@ public class SimpleMain extends Jawn {
         mvc(IndexController.class);
         mvc(RedirectController.class);
         
-        mvc(UrlController.class);
+     
+        mvc(UrlController.class)
+            .before(new LogRequestPropertiesFilter()); // Filters (Controller specific)
 //        get("/else", UrlController.class);
 //        get("/language/{lang}/{long_id: .*?}", context -> Results.text("language is ''{0}'' - param id: {1}", context.param("lang").orElse(null), context.param("long_id").orElse(null)));
 //        get("/language/{lang}/{long_id: .*?}", UrlController.class, UrlController::getLang);
@@ -67,10 +70,7 @@ public class SimpleMain extends Jawn {
         
         // Filters (Global)
         // Called in the same order as they are declared
-//        filter(new LogRequestsFilter());
         filter(new LogRequestTimingFilter());
-        // Filters (Controller specific)
-//        filter(new LogRequestPropertiesFilter(), UrlController.class);
         
         // Modules
         use(new DbModule());
