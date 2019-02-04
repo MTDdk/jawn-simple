@@ -6,7 +6,8 @@ import net.javapla.jawn.core.Results;
 import net.javapla.jawn.core.mvc.GET;
 import net.javapla.jawn.core.mvc.Path;
 
-@Path(value = {"/else", "/url"})
+@Path("/else")
+@Path("/url")
 public class UrlController /*extends Controller*/ {
  /*   
     public void getLang() {
@@ -24,7 +25,7 @@ public class UrlController /*extends Controller*/ {
     
     @GET
     public Result index() {
-        return Results.html().template("url");
+        return Results.view().template("url");
     }
     
     @GET

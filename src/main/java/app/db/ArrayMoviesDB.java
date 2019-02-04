@@ -14,6 +14,8 @@ class ArrayMoviesDB implements MoviesDB {
     private List<Movie> movies = new ArrayList<>();
     
     ArrayMoviesDB() {
+        System.out.println("================================================");
+        
         Collections.addAll( movies,
             new Movie("Guardians of the Galaxy", 2014, 0),
             new Movie("Taken", 2008, 1),

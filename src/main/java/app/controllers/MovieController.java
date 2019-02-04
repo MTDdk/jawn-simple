@@ -1,13 +1,35 @@
 package app.controllers;
 
+import java.util.Arrays;
+
 import com.google.inject.Inject;
 
 import app.db.MoviesDB;
+import net.javapla.jawn.core.Context;
+import net.javapla.jawn.core.Results;
+import net.javapla.jawn.core.View;
+import net.javapla.jawn.core.mvc.GET;
+import net.javapla.jawn.core.mvc.Path;
 
+@Path("/movie")
 public class MovieController /*extends Controller*/ {
     
     @Inject
     MoviesDB movies;
+    
+    @GET
+    public View index() {
+        return Results.view().template("list").path("movie").put("movies", movies.listMovies());
+    }
+    
+    @GET
+    @Path("single/{id}")
+    public View getSingle(Context ctx) {
+        return Results.view()
+            .template("list")
+            .path("movie")
+            .put("movies", Arrays.asList(movies.fetch(ctx.param("id").map(Integer::parseInt).orElse(0))));
+    }
 
 /*    public void index() {
         view("movies", movies.listMovies());

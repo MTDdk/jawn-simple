@@ -30,7 +30,7 @@ public class IndexController /*extends Controller*/ {
     
     @GET
     public Result index() {
-        return Results.html();
+        return Results.view();
     }
     
     @GET
