@@ -19,15 +19,13 @@ import net.javapla.jawn.core.util.Modes;
 
 public class SimpleMain extends Jawn {
     
-    //TODO
-    // Create a AssetRouter (like the MvcRouter) that finds folders in webapp to serve
-    
     // implicit constructor
     {
         mode(Modes.DEV);
         onStartup(() -> System.out.println("My app has started up!"));
         onShutdown(() -> System.out.println("Closing down"));
         
+        assets().etag(false).lastModified(true).maxAge();
         
         // Custom Routes
         mvc(IndexController.class);
