@@ -1,5 +1,8 @@
 package app.controllers;
 
+import java.net.MalformedURLException;
+import java.net.URL;
+
 import net.javapla.jawn.core.Context;
 import net.javapla.jawn.core.Result;
 import net.javapla.jawn.core.Results;
@@ -20,9 +23,19 @@ public class RedirectController /*extends Controller*/ {
     }
     
     @POST
-    @Path("{url}")
     public Result postIndex(Context ctx) {
-        return Results.redirect(ctx.param("url").orElse(""));
+        return ctx.param("url")
+            .filter(url -> !url.isEmpty())
+            .map(url -> Results.temporaryRedirect(url))
+            .orElse(Results
+                .view()
+                .put("redirect", "nothing")
+                .put("error", "no url")
+                .template("redirect")
+                .path("redirect")
+            );
+        
+        //return Results.redirect(ctx.param("url").orElse(""));
     }
     
  /*   
