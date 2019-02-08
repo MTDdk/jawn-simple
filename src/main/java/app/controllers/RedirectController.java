@@ -24,9 +24,10 @@ public class RedirectController /*extends Controller*/ {
     
     @POST
     public Result postIndex(Context ctx) {
+        
         return ctx.param("url")
             .filter(url -> !url.isEmpty())
-            .map(url -> Results.temporaryRedirect(url))
+            .map(url -> Results.redirect(url))
             .orElse(Results
                 .view()
                 .put("redirect", "nothing")

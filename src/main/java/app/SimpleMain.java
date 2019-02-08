@@ -28,8 +28,9 @@ public class SimpleMain extends Jawn {
         assets().etag(false).lastModified(true).maxAge();
         
         // Custom Routes
-        mvc(IndexController.class);
-        mvc(RedirectController.class);
+//        mvc(IndexController.class);
+//        mvc(RedirectController.class);
+        controllers("app.controllers");
         
      
         mvc(UrlController.class)
@@ -39,7 +40,7 @@ public class SimpleMain extends Jawn {
 //        get("/language/{lang}/{long_id: .*?}", UrlController.class, UrlController::getLang);
         
         
-        mvc(MovieController.class);
+//        mvc(MovieController.class);
 //        get("/movie/id/{id}", MovieController.class, MovieController::getSingle);
         
         
