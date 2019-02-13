@@ -10,7 +10,10 @@
     <logger name="org.xnio" level="WARN" additivity="false">
         <appender-ref ref="STDOUT" />
     </logger>
-    <root level="DEBUG">
+    <logger name="io.undertow" level="WARN" additivity="false">
+        <appender-ref ref="STDOUT" />
+    </logger>
+    <root level="INFO">
         <appender-ref ref="STDOUT" />
     </root>
 

@@ -2,9 +2,6 @@ package app;
 
 import java.util.Random;
 
-import app.controllers.IndexController;
-import app.controllers.MovieController;
-import app.controllers.RedirectController;
 import app.controllers.UrlController;
 import app.db.DbModule;
 import app.db.MoviesDB;
@@ -28,8 +25,6 @@ public class SimpleMain extends Jawn {
         assets().etag(false).lastModified(true).maxAge();
         
         // Custom Routes
-//        mvc(IndexController.class);
-//        mvc(RedirectController.class);
         controllers("app.controllers");
         
      
@@ -44,7 +39,7 @@ public class SimpleMain extends Jawn {
 //        get("/movie/id/{id}", MovieController.class, MovieController::getSingle);
         
         
-        get("/misc", Results.view().template("/misc"));
+        get("/misc", Results.view().template("misc"));
         get("/test/{type}", (context) -> { // inline response function
             Movie m = new Movie("The Avengers",2012);
             

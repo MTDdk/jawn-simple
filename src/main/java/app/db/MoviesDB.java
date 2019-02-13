@@ -2,8 +2,11 @@ package app.db;
 
 import java.util.List;
 
+import com.google.inject.ImplementedBy;
+
 import app.models.Movie;
 
+//@ImplementedBy(ArrayMoviesDB.class)
 public interface MoviesDB {
 
     public List<Movie> listMovies();

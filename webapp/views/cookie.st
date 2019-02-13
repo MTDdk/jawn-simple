@@ -4,7 +4,7 @@
   <div class="panel panel-default">
     <div class="panel-heading">Add a cookie:</div>
     <div class="panel-body">
-      <form action="/cookie/cookie" method="post">
+      <form action="/cookie" method="post">
         <div class="form-group">
           <label for="cookiename">Cookie name</label>
           <input id="cookiename" type="text" class="form-control" name="name">
@@ -25,13 +25,13 @@
     <div class="panel-body">
       <ul>
       $cookies:{cookie |
-      <li>$cookie.name$ + $cookie.value$ + $cookie.maxAge$ + $cookie.expires$</li>
+      <li>$cookie.name$ + $cookie.value$ + $cookie.maxAge$</li>
       }$
       </ul>
     </div>
   </div>
 
-  <form action="/cookie/cookies" method="post">
+  <form action="/cookie" method="post">
     <input type="hidden" name="_method" value="DELETE">
     <button id="delete-cookies" class="btn btn-warning">Delete all cookies</button>
   </form>
