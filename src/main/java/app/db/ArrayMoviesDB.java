@@ -8,7 +8,7 @@ import com.google.inject.Singleton;
 
 import app.models.Movie;
 
-//@Singleton
+@Singleton
 class ArrayMoviesDB implements MoviesDB {
     
     private List<Movie> movies = new ArrayList<>();

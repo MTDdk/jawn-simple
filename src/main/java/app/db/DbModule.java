@@ -7,7 +7,6 @@ public class DbModule implements ModuleBootstrap {
     
     @Override
     public void bootstrap(ApplicationConfig config) {
-        System.out.println("DbModule " + hashCode() + " MoviesDB.class " + MoviesDB.class.hashCode());
         config.binder().bind(MoviesDB.class).to(ArrayMoviesDB.class);
     }
 }
