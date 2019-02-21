@@ -32,13 +32,13 @@ public class MovieController {
         return Results.view()
             .template("list")
             .path("movie")
-            .put("movies", Arrays.asList(movies.fetch(ctx.param("id").map(Integer::parseInt).orElse(0))));
+            .put("movies", Arrays.asList(movies.fetch(ctx.param("id").intValue(0))));
     }
     
     @POST
-    public Result postMovie(Context ctx) {
-        String title = ctx.param("title").get();
-        int year = ctx.param("year").map(Integer::parseInt).orElse(2000);
+    public Result postMovie(Context ctx) throws Exception {
+        String title = ctx.param("title").value();
+        int year = ctx.param("year").intValue(2000);
         
         movies.add(new Movie(title, year));
         
@@ -53,7 +53,7 @@ public class MovieController {
     @Path("/name")
     public void putName(Context ctx) {
         Movie movie = movies.fetch(ctx.param("pk").map(Integer::parseInt).get());
-        movie.name = ctx.param("value").get();
+        movie.name = ctx.param("value").value();
     }
     
     @PUT

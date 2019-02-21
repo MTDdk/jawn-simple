@@ -45,7 +45,7 @@ public class SimpleMain extends Jawn {
             
             Result rsp;
             
-            String type = context.param("type").orElse("text");
+            String type = context.param("type").value("text");
             switch(type) {
                 case "json":
                     rsp = Results.json(m);
