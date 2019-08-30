@@ -25,9 +25,9 @@ public class UploadController {
     }
     
     @POST
-    public View postIndex(Context context) {
+    public View postIndex(Context.Request req) {
         // Read the uploaded image
-        FormItem uploaded = context.req().formData().first("image");
+        FormItem uploaded = req.formData().first("image");
         
         // Resize the image
         byte[] image = images.image(uploaded).resizeToWidth(400).asBytes();

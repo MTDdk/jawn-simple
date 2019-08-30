@@ -24,20 +24,13 @@ public class SimpleMain extends Jawn {
         
         assets().etag(false).lastModified(true).maxAge();
         
-        // Custom Routes
+        // MVC
         controllers("app.controllers");
-
         controller(UrlController.class)
             .before(new LogRequestPropertiesFilter()); // Filters (Controller specific)
-//        get("/else", UrlController.class);
-//        get("/language/{lang}/{long_id: .*?}", context -> Results.text("language is ''{0}'' - param id: {1}", context.param("lang").orElse(null), context.param("long_id").orElse(null)));
-//        get("/language/{lang}/{long_id: .*?}", UrlController.class, UrlController::getLang);
         
         
-//        mvc(MovieController.class);
-//        get("/movie/id/{id}", MovieController.class, MovieController::getSingle);
-        
-        
+        // Custom Routes
         get("/misc", Results.view().template("misc"));
         get("/test/{type}", (context) -> { // inline response function
             Movie m = new Movie("The Avengers",2012);

@@ -2,18 +2,16 @@ apply plugin: 'java'
 apply plugin: 'eclipse'
 apply plugin: 'application'
 
-// compiler options
-sourceCompatibility = JavaVersion.VERSION_1_10
-targetCompatibility = JavaVersion.VERSION_1_10
-
-
 repositories {
-    mavenCentral()
+  mavenCentral()
+  maven { // only for snapshot repos
+    url 'https://oss.sonatype.org/content/repositories/snapshots'
+  }
 }
 
 dependencies {
-    compile project(':jawn-server-undertow'), project(':jawn-templates-stringtemplate')
-  	//compile 'net.javapla.jawn:jawn:0.9.10'
+  compile project(':jawn-server-undertow'), project(':jawn-templates-stringtemplate')
+	//compile 'net.javapla.jawn:jawn:1.0.0-SNAPSHOT'
 }
 
 /* ******************* */
@@ -21,3 +19,7 @@ dependencies {
 /* ******************* */
 mainClassName = 'app.SimpleMain'
 applicationDistribution.from('webapp') { into 'webapp' }
+
+// compiler options
+sourceCompatibility = JavaVersion.VERSION_1_10
+targetCompatibility = JavaVersion.VERSION_1_10
