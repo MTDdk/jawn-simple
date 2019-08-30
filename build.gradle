@@ -12,7 +12,7 @@ repositories {
 }
 
 dependencies {
-    compile project(':jawn-core-new')//, project('jawn-templates-stringtemplate')
+    compile project(':jawn-server-undertow'), project(':jawn-templates-stringtemplate')
   	//compile 'net.javapla.jawn:jawn:0.9.10'
 }
 

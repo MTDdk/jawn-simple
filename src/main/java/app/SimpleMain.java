@@ -26,9 +26,8 @@ public class SimpleMain extends Jawn {
         
         // Custom Routes
         controllers("app.controllers");
-        
-     
-        mvc(UrlController.class)
+
+        controller(UrlController.class)
             .before(new LogRequestPropertiesFilter()); // Filters (Controller specific)
 //        get("/else", UrlController.class);
 //        get("/language/{lang}/{long_id: .*?}", context -> Results.text("language is ''{0}'' - param id: {1}", context.param("lang").orElse(null), context.param("long_id").orElse(null)));
@@ -45,7 +44,7 @@ public class SimpleMain extends Jawn {
             
             Result rsp;
             
-            String type = context.param("type").orElse("text");
+            String type = context.param("type").toOptional().orElse("text");
             switch(type) {
                 case "json":
                     rsp = Results.json(m);

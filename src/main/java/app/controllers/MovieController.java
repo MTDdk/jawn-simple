@@ -36,7 +36,7 @@ public class MovieController {
     
     @POST
     public Result postMovie(Context ctx) {
-        String title = ctx.param("title").get();
+        String title = ctx.param("title").value();
         int year = ctx.param("year").map(Integer::parseInt).orElse(2000);
         
         movies.add(new Movie(title, year));

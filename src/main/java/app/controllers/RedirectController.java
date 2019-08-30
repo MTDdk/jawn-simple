@@ -25,7 +25,7 @@ public class RedirectController /*extends Controller*/ {
     @POST
     public Result postIndex(Context ctx) {
         
-        return ctx.param("url")
+        return ctx.param("url").toOptional()
             .filter(url -> !url.isEmpty())
             .map(url -> Results.redirect(url))
             .orElse(Results

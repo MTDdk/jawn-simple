@@ -31,6 +31,6 @@ public class UrlController /*extends Controller*/ {
     @GET
     @Path("/language/{lang}/{long_id: .*?}")
     public Result lang(Context context) {
-        return Results.text("language is ''{0}'' - param id: {1}", context.param("lang").orElse(null), context.param("long_id").orElse(null));
+        return Results.text("language is ''{0}'' - param id: {1}", context.param("lang").toOptional().orElse(null), context.param("long_id").toOptional().orElse(null));
     }
 }

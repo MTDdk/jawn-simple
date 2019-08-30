@@ -27,7 +27,7 @@ public class IndexController /*extends Controller*/ {
     @GET
     @Path("/image")
     public Result image(Context ctx) {
-        File file = new File(ctx.realPath("images/pi.jpg"));
+        File file = ctx.realPath("images/pi.jpg").toFile();
         return Results.ok(file)
             .contentType(MediaType.byExtension("jpg").get())
             .header("Content-Disposition", "") // hinders the browser from downloading the image
