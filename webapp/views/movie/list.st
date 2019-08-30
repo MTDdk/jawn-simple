@@ -15,7 +15,7 @@
   </table>
 
   <p class="lead">Add new movie</p>
-  <form class="form-inline" action="/movie/movie" method="post">
+  <form class="form-inline" action="/movie" method="post">
     <div class="form-group">
       <label class="sr-only" for="title">Title</label>
       <input type="text" class="form-control" id="title" name="title" placeholder="Title">

@@ -1,8 +1,5 @@
 package app.controllers;
 
-import java.net.MalformedURLException;
-import java.net.URL;
-
 import net.javapla.jawn.core.Context;
 import net.javapla.jawn.core.Result;
 import net.javapla.jawn.core.Results;
